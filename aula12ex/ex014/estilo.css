@@ -15,8 +15,14 @@ section {
     margin: auto; /*Centralizar*/
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.377);  /*Colocar sobrar no raio da borda*/
 }
+div {
+    text-align: center;
+    padding: 8px;
+}
+
 footer{
     color: white;
+    font: normal 15px Arial;
     text-align: center; /*texto centralizado*/
     font-style: italic; /*Estilo da fonte em itálico*/
 }
