@@ -1,8 +1,13 @@
 function verificar(){
     var data = new Date()
+    //getFullYar é para pegar os 4 digitos do ano por exemplo 2023
     var ano = data.getFullYear()
     var fano = document.getElementById('txtano')
+    //uma forma de fazer
+    //var res = document.getElementById('res')
     var res = document.querySelector('div#res')
+     //Verificar se a caixa está vazia ou
+    // se o ano é maior que o atual
     if (fano.value.length == 0 || Number(fano.value) > ano) {
         window.alert ('[ERRO] Verifique os dados e tente novamente!')
     } else {
@@ -10,9 +15,12 @@ function verificar(){
         var fsex = document.getElementsByName('radsex')
         var idade = ano - Number(fano.value)
         var genero = ''
+         //criação de um img pelo java escript
         var img = document.createElement('img')
+         //atribuindo id foto ao imgg
         img.setAttribute('id','foto')
-        
+        //se o que tiver marcado for o fsex na posição zero
+        // é sinal que ele é Masculino
         if (fsex[0].checked){
             genero = 'Homem'    
             if (idade>= 0 && idade <=5){
@@ -45,15 +53,14 @@ function verificar(){
                 img.setAttribute('src', 'foto-jovem-f.png')
             }else if (idade < 60){
                 //adulto
-                //está dando erro nessa imagem
-                img.setAttribute('src', 'foto-adulto-f.png')
+                img.setAttribute('src', 'foto-adulta-f.png')
             }else {
                 //idoso
                 img.setAttribute('src', 'foto-idoso-f.png')
             }
         }
-        //res.style.texAlign = 'center'
         res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
+        //adicionar um elemento
         res.appendChild(img)
     }
 }
