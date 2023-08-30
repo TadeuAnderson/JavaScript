@@ -14,9 +14,8 @@ function verificar(){
         img.setAttribute('id','foto')
         
         if (fsex[0].checked){
-            genero = 'Homem'
-           
-            if (idade >= 0 && idade <= 5){
+            genero = 'Homem'    
+            if (idade>= 0 && idade <=5){
                 //bebe
                 img.setAttribute('src', 'foto-bebe-m.png')
             }else if (idade <= 10){
@@ -31,32 +30,30 @@ function verificar(){
             }else {
                 //idoso
                 img.setAttribute('src', 'foto-idoso-m.png')
-            }
-            
+            }     
 
         } else if ( fsex[1].checked){
             genero = 'Mulher'
-            
             if (idade>= 0 && idade <=5){
                 //bebe
-                //img.setAttribute('scr', 'foto-bebe-f.png')
+                img.setAttribute('src', 'foto-bebe-f.png')
             }else if (idade <= 10){
                 //criança
-               // img.setAttribute('scr', 'foto-crianca-f.png')
+                img.setAttribute('src', 'foto-crianca-f.png')
             }else if (idade <= 21){
                 //Jovem
-               // img.setAttribute('scr', 'foto-jovem-f.png')
+                img.setAttribute('src', 'foto-jovem-f.png')
             }else if (idade < 60){
                 //adulto
-               // img.setAttribute('scr', 'foto-adulto-f.png')
+                //está dando erro nessa imagem
+                img.setAttribute('src', 'foto-adulto-f.png')
             }else {
                 //idoso
-               // img.setAttribute('scr', 'foto-idoso-f.png')
+                img.setAttribute('src', 'foto-idoso-f.png')
             }
-            
         }
-        res.style.texAlign = 'center'
-        res.innerHTML = `Detectamos ${gênero} com ${idade} anos.`
+        //res.style.texAlign = 'center'
+        res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
         res.appendChild(img)
     }
 }
